@@ -47,7 +47,7 @@ const authUser = asyncHandler(async (req, res) => {
       //   const updatedWallet = user.wallet - registerCost
       const updatedUser = await User.findOneAndUpdate(
         { 'username': username },
-        { $set: { ...user, wallet: user.wallet - registerCost } },
+        { $set: { wallet: user.wallet - registerCost } },
         { new: true }
       )
       console.log(updatedUser)
